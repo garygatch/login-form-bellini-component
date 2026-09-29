@@ -1,0 +1,545 @@
+{
+  "type": "component",
+  "name": "login-form",
+  "description": "## Login Form\nA reusable, global sign-in form with a polished premium presentation, built-in required-field validation, optional remember-me support, and a loading-aware submit action. Authentication remains the responsibility of the parent through the `onSubmit` callback.",
+  "children": [
+    {
+      "name": "div",
+      "classList": [
+        "min-h-screen",
+        "w-full",
+        "bg-amber-50/60",
+        "px-4",
+        "py-10",
+        "sm:px-6",
+        "lg:py-16"
+      ],
+      "layout": {
+        "container": {
+          "type": "box",
+          "orientation": "column",
+          "crossAxisAlignment": "center",
+          "gap": "1.5rem"
+        }
+      },
+      "children": [
+        {
+          "name": "div",
+          "classList": [
+            "w-full",
+            "max-w-md",
+            "rounded-2xl",
+            "bg-white",
+            "px-6",
+            "py-8",
+            "shadow-xl",
+            "shadow-slate-900/5",
+            "sm:px-10",
+            "sm:py-10"
+          ],
+          "layout": {
+            "cell": {
+              "type": "box-item",
+              "growFactor": 0,
+              "shrinkFactor": 1,
+              "mainSize": "100%"
+            },
+            "container": {
+              "type": "box",
+              "orientation": "column",
+              "crossAxisAlignment": "stretch",
+              "gap": "1.25rem"
+            }
+          },
+          "children": [
+            {
+              "name": "div",
+              "classList": [
+                "flex",
+                "flex-col",
+                "items-center",
+                "text-center"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "Badge",
+                  "nodeName": "bln-badge",
+                  "attributes": [
+                    {
+                      "property": "core",
+                      "value": ""
+                    }
+                  ],
+                  "classList": [
+                    "mb-4"
+                  ],
+                  "children": [],
+                  "type": "core-component",
+                  "expressions": [
+                    {
+                      "expression": "' ' ",
+                      "to": "text"
+                    },
+                    {
+                      "expression": "'blue'",
+                      "to": "colorScheme"
+                    },
+                    {
+                      "expression": "'solid'",
+                      "to": "type"
+                    },
+                    {
+                      "expression": "({'type': 'font-icon', 'style': 'solid', 'name': 'lock', 'position': 'icon-only'})",
+                      "to": "icon"
+                    }
+                  ]
+                },
+                {
+                  "name": "h2",
+                  "classList": [
+                    "text-2xl",
+                    "font-semibold",
+                    "tracking-tight",
+                    "text-slate-900"
+                  ],
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "Welcome back",
+                      "evaluate": false
+                    }
+                  ]
+                },
+                {
+                  "name": "p",
+                  "classList": [
+                    "mt-1",
+                    "text-sm",
+                    "leading-6",
+                    "text-slate-500"
+                  ],
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "Sign in securely to continue to your account.",
+                      "evaluate": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Text Input",
+              "nodeName": "bln-text-input",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                }
+              ],
+              "classList": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Email or username'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'text'",
+                  "to": "type"
+                },
+                {
+                  "expression": "$ctrl.emailOrUsername",
+                  "to": "value"
+                },
+                {
+                  "expression": "'you@example.com'",
+                  "to": "placeholder"
+                },
+                {
+                  "expression": "true",
+                  "to": "isRequired"
+                },
+                {
+                  "expression": "$ctrl.submitting",
+                  "to": "disabled"
+                }
+              ],
+              "formControl": {
+                "modelName": "value"
+              }
+            },
+            {
+              "name": "Text Input",
+              "nodeName": "bln-text-input",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                }
+              ],
+              "classList": [],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Password'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'password'",
+                  "to": "type"
+                },
+                {
+                  "expression": "$ctrl.password",
+                  "to": "value"
+                },
+                {
+                  "expression": "'Enter your password'",
+                  "to": "placeholder"
+                },
+                {
+                  "expression": "true",
+                  "to": "isRequired"
+                },
+                {
+                  "expression": "$ctrl.submitting",
+                  "to": "disabled"
+                }
+              ],
+              "formControl": {
+                "modelName": "value"
+              }
+            },
+            {
+              "name": "div",
+              "classList": [
+                "flex",
+                "items-center",
+                "justify-between",
+                "py-1"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "Checkbox",
+                  "nodeName": "bln-checkbox",
+                  "attributes": [
+                    {
+                      "property": "core",
+                      "value": ""
+                    }
+                  ],
+                  "classList": [],
+                  "children": [],
+                  "type": "core-component",
+                  "expressions": [
+                    {
+                      "expression": "'Remember me'",
+                      "to": "label"
+                    },
+                    {
+                      "expression": "$ctrl.rememberMe",
+                      "to": "checked"
+                    },
+                    {
+                      "expression": "$ctrl.submitting",
+                      "to": "disabled"
+                    }
+                  ],
+                  "formControl": {
+                    "modelName": "checked"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "div",
+              "attributes": [
+                {
+                  "property": "role",
+                  "value": "alert"
+                },
+                {
+                  "property": "aria-live",
+                  "value": "polite"
+                }
+              ],
+              "classList": [
+                "rounded-lg",
+                "bg-rose-50/70",
+                "px-3.5",
+                "py-3",
+                "text-sm",
+                "leading-5",
+                "text-rose-700"
+              ],
+              "displayExpression": "$ctrl.errorMessage",
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "text",
+                  "textContent": "$ctrl.errorMessage",
+                  "evaluate": true
+                }
+              ]
+            },
+            {
+              "name": "Button",
+              "nodeName": "bln-button",
+              "attributes": [
+                {
+                  "property": "core",
+                  "value": ""
+                }
+              ],
+              "classList": [
+                "w-full",
+                "rounded-full"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [],
+              "type": "core-component",
+              "expressions": [
+                {
+                  "expression": "'Sign in'",
+                  "to": "label"
+                },
+                {
+                  "expression": "'primary'",
+                  "to": "type"
+                },
+                {
+                  "expression": "$ctrl.submitting",
+                  "to": "showLoading"
+                },
+                {
+                  "expression": "$ctrl.submitting",
+                  "to": "isDisabled"
+                },
+                {
+                  "expression": "$ctrl.handleSubmit()",
+                  "to": "onClick"
+                }
+              ]
+            },
+            {
+              "name": "div",
+              "classList": [
+                "flex",
+                "items-center",
+                "justify-center",
+                "gap-2",
+                "pt-2",
+                "text-xs",
+                "text-slate-400"
+              ],
+              "layout": {
+                "cell": {
+                  "type": "box-item",
+                  "growFactor": 0,
+                  "shrinkFactor": 0,
+                  "mainSize": "auto"
+                }
+              },
+              "children": [
+                {
+                  "name": "Badge",
+                  "nodeName": "bln-badge",
+                  "attributes": [
+                    {
+                      "property": "core",
+                      "value": ""
+                    }
+                  ],
+                  "classList": [],
+                  "children": [],
+                  "type": "core-component",
+                  "expressions": [
+                    {
+                      "expression": "' ' ",
+                      "to": "text"
+                    },
+                    {
+                      "expression": "'default'",
+                      "to": "colorScheme"
+                    },
+                    {
+                      "expression": "'outline'",
+                      "to": "type"
+                    },
+                    {
+                      "expression": "({'type': 'font-icon', 'style': 'solid', 'name': 'lock', 'position': 'icon-only'})",
+                      "to": "icon"
+                    }
+                  ]
+                },
+                {
+                  "name": "span",
+                  "classList": [
+                    "text-xs",
+                    "text-slate-400"
+                  ],
+                  "children": [
+                    {
+                      "name": "text",
+                      "textContent": "Secure sign-in",
+                      "evaluate": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "handleSubmit",
+      "description": "Validates the required credentials locally and emits the submit callback only when both fields contain values.",
+      "type": "method",
+      "body": "if (!$ctrl.emailOrUsername || !$ctrl.password || $ctrl.submitting) {\n  return;\n}\n$ctrl.onSubmit({ credentials: { emailOrUsername: $ctrl.emailOrUsername, password: $ctrl.password }, rememberMe: $ctrl.rememberMe });",
+      "invokeOnLoad": false,
+      "isAsync": false,
+      "returnType": {
+        "name": "any"
+      },
+      "parameters": [],
+      "watch": []
+    }
+  ],
+  "bindings": [
+    {
+      "name": "emailOrUsername",
+      "type": "=",
+      "default": "''",
+      "description": "Email address or username entered by the user.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "text",
+      "autocomplete": [],
+      "includeAssets": false
+    },
+    {
+      "name": "password",
+      "type": "=",
+      "default": "''",
+      "description": "Password entered by the user.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "text",
+      "autocomplete": [],
+      "includeAssets": false
+    },
+    {
+      "name": "rememberMe",
+      "type": "=",
+      "default": "false",
+      "description": "Whether the user selected the optional remember-me choice.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "boolean"
+    },
+    {
+      "name": "submitting",
+      "type": "<",
+      "default": "false",
+      "description": "When true, disables the form action and shows the button loading state.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "boolean"
+    },
+    {
+      "name": "errorMessage",
+      "type": "<",
+      "default": "''",
+      "description": "Optional concise error message supplied by the parent.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "text",
+      "autocomplete": [],
+      "includeAssets": false
+    },
+    {
+      "name": "onSubmit",
+      "type": "<",
+      "default": "",
+      "description": "Called with `{ credentials: { emailOrUsername, password }, rememberMe }` after required fields pass validation.",
+      "visibleWhen": "",
+      "label": "",
+      "group": "",
+      "example": "",
+      "actions": [],
+      "propertyType": "function",
+      "parameters": [
+        "credentials",
+        "rememberMe"
+      ]
+    }
+  ],
+  "modules": [],
+  "styles": []
+}
