@@ -439,6 +439,16 @@
           ]
         }
       ]
+    },
+    {
+      "name": "c1",
+      "nodeName": "c1",
+      "classList": [],
+      "children": [],
+      "type": "custom-component",
+      "ownerId": "6abb29cc0c6fee37005d8d3c",
+      "ownerType": "component",
+      "expressions": []
     }
   ],
   "variables": [
@@ -541,5 +551,16 @@
     }
   ],
   "modules": [],
-  "styles": []
+  "styles": [],
+  "directories": {
+    "assets": [],
+    "components": [
+      {
+        "id": "DRRjXqMVqdgfUwaMZPCkN",
+        "name": "aa"
+      }
+    ],
+    "scripts": [],
+    "stylesheets": []
+  }
 }
